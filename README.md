@@ -13,8 +13,7 @@ Dataset: `imdb_labelled.txt` (sentence-level labels, 0 = negative, 1 = positive)
 
 ## Results
 Validation accuracy: **~77%**  
-Not bad for a simple baseline on a small dataset.  
-Could easily be improved with n‑grams, hyperparameter tuning, or trying other models.
+
 
 ## Tech used
 - Python 3
