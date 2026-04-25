@@ -30,7 +30,6 @@ The small difference is normal for this dataset size. Both models perform reason
 - Convert text to numerical features (TF‑IDF or CountVectorizer)
 - Train a Logistic Regression classifier
 - Print accuracy, classification report, and confusion matrix
-- (Optional) Predict sentiment for new sentences
 
 ---
 
