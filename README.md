@@ -1,30 +1,52 @@
 # IMDB Sentiment Classification – NLP Course Project
 
-A tiny NLP project that trains a Logistic Regression model to classify movie reviews as positive or negative.  
-Dataset: `imdb_labelled.txt` (sentence-level labels, 0 = negative, 1 = positive).
+A small NLP project that classifies movie reviews as **positive** or **negative** using Logistic Regression.  
+The dataset (`imdb_labelled.txt`) contains 748 labelled sentences.
 
-## What it does
-- Loads the labelled sentences.
-- Splits them into 80% training / 20% validation (stratified).
-- Converts text to numerical features using TF‑IDF.
-- Trains a Logistic Regression classifier.
-- Evaluates on the validation set and prints accuracy, classification report, and confusion matrix.
-- Predicts sentiment for a few brand‑new sentences.
+Two feature extraction methods are compared:
+
+- **TF‑IDF** → notebook `imdb_sentiment_classifier.ipynb`
+- **Bag of Words (CountVectorizer)** → notebook `imdb_sentiment_bow.ipynb`
+
+Both approaches follow the same pipeline: load → split (80/20 stratified) → vectorize → train → evaluate.
+
+---
 
 ## Results
-Validation accuracy: **~77%**  
 
+| Method       | Validation Accuracy |
+|--------------|---------------------|
+| TF‑IDF       | 76.67%              |
+| Bag of Words | 77.33%              |
 
-## Tech used
+The small difference is normal for this dataset size. Both models perform reasonably well for a simple baseline.
+
+---
+
+## What the notebooks do
+
+- Read the labelled sentences from `imdb_labelled.txt`
+- Split into training (80%) and validation (20%) sets
+- Convert text to numerical features (TF‑IDF or CountVectorizer)
+- Train a Logistic Regression classifier
+- Print accuracy, classification report, and confusion matrix
+- (Optional) Predict sentiment for new sentences
+
+---
+
+## Tech stack
+
 - Python 3
 - Pandas, NumPy
-- Scikit‑learn (train_test_split, TfidfVectorizer, LogisticRegression, metrics)
+- Scikit‑learn (`train_test_split`, `TfidfVectorizer`, `CountVectorizer`, `LogisticRegression`)
 - Jupyter Notebook
 
-## How to run it
+---
+
+## How to run
 
 1. Clone this repo or download the files.
-2. Create a virtual environment (optional but nice):
+2. (Optional) Create and activate a virtual environment:
    ```bash
    python -m venv nlp_env
    nlp_env\Scripts\activate      # Windows
